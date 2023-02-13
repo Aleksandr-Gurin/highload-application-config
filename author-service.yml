@@ -1,9 +1,4 @@
 spring:
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5433}/${POSTGRES_DB:highload}?currentSchema=author
-    username: ${POSTGRES_USER:postgres}
-    password: ${POSTGRES_PASSWORD:12345}
   jpa:
     show-sql: true
     database: postgresql
@@ -13,6 +8,11 @@ spring:
       hibernate:
         show_sql: true
         format_sql: false
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5433}/${POSTGRES_DB:highload}?currentSchema=author
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD:12345}
   liquibase:
     change-log: classpath:db/changelog/db.changelog-master.yml
     default-schema: author
